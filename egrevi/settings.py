@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-suktjm9_i0r2@4^z(k!2z(@$kb&ha@=_r-9^amb$!dmgpij44i'
+SECRET_KEY = 'django-insecure-suktjm9_i0r2@5^z(k!2z(@$kb&ha@=_r-9^amb$!dmgpij44i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'egrevi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/landino/PycharmProjects/egrevi/egrevi/plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

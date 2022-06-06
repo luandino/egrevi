@@ -5,17 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+    {% include "barra.html" %}
     <h2>
         Estamos viendo la primera plantilla
     </h2>
-<p>El nombre del profesor es {{nombre_persona}}</p>
+    {% comment %}
+    Esto es un comentario de más de una
+    linea
+    {% endcomment %}
+    {%  if nombre_persona == 'Profesor Juan'%}
+    <p>El curso lo imparte el profesor titular</p>
+
+    {% else %}
+    <p>El curso lo imparte el profeso suplemente,,, supuestamente</p>
+
+
+    {% endif %}
+
+<p>El nombre del profesor es {{nombre_persona|first|lower}}</p>
 <p>Estamos viendo la plantilla a la hora {{instante}}</p>
 <p>Temas que dice saber: </p>
     <p>
         <ul>
         {% if conocimiento %}
         {% for tema in conocimiento %}
-        <li> {{tema}}</li>
+        <li> {{tema|first}}</li>
         {% endfor %}
         {% else %}
             <p>Nada para mostrar</p>

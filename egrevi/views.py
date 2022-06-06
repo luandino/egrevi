@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.template import Template, Context
+from django.template.loader import get_template
+from django.shortcuts import render
 
 import datetime
 
@@ -8,20 +10,26 @@ def estudios(request):
     #doc_externo=open(egrevi/plantillas/miplantilla.html)
 
     nombre="Luciano Andino"
-    doc_externo=open("C:/Users/landino/PycharmProjects/egrevi/egrevi/plantillas/miplantillaloop.html")
-    plt=Template(doc_externo.read())
-    doc_externo.close()
+    #nombre="Profesor Juan"
+    #doc_externo=open("C:/Users/landino/PycharmProjects/egrevi/egrevi/plantillas/miplantillaloop.html")
+    #plt=Template(doc_externo.read())
+    #doc_externo.close()
+
+    doc_externo=get_template('miplantillaloop.html')
+
+
     fecha_actual = datetime.datetime.now()
-    actividades= ["Correr","Cocinar", "Enseñar"]
+    actividades= ["Correr","Cocinar", "Enseñar","Lavar los platos", "Macanear"]
     #actividades=[]
-    ctx=Context({"nombre_persona": nombre, "instante": fecha_actual, "conocimiento": actividades})
-    documento=plt.render(ctx)
-    return HttpResponse(documento)
+    #ctx=Context({"nombre_persona": nombre, "instante": fecha_actual, "conocimiento": actividades})
+    #documento=doc_externo.render({"nombre_persona": nombre, "instante": fecha_actual, "conocimiento": actividades})
+    #return HttpResponse(documento)
+    return render(request,"miplantillaloop.html",{"nombre_persona": nombre, "instante": fecha_actual, "conocimiento": actividades})
 
 def calcula_jubilacion(request):
     #doc_externo=open(egrevi/plantillas/miplantilla.html)
 
-    nombre="Josecito"
+    nombre="Josecitow"
     doc_externo=open("C:/Users/landino/PycharmProjects/egrevi/egrevi/plantillas/miplantilla.html")
     plt=Template(doc_externo.read())
     doc_externo.close()
