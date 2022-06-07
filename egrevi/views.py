@@ -6,6 +6,12 @@ from django.shortcuts import render
 import datetime
 
 
+def cursop(request):
+
+    fecha_actual = datetime.datetime.now()
+    return render(request, "cursop.html",{"dame_fecha": fecha_actual})
+
+
 def estudios(request):
     #doc_externo=open(egrevi/plantillas/miplantilla.html)
 
